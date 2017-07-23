@@ -230,6 +230,11 @@ class splunk::params (
       $forwarder_pkg_name   = 'splunkforwarder'
       $server_pkg_name      = 'splunk'
     }
+    'Debian armv7l': {
+      $package_suffix       = "${version}-${build}-linux-2.6-arm.deb"
+      $forwarder_pkg_name   = 'splunkforwarder'
+      $server_pkg_name      = 'splunk'
+    }
     default: { fail("unsupported osfamily/arch ${::osfamily}/${::architecture}") }
   }
 
